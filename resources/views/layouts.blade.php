@@ -21,24 +21,63 @@
     </ul>
 </body>
 <script>
-function a(callback){
-    console.log(1);
-    callback();
+
+// let a = () => {
+//     return new Promise((resolve, reject)=> {
+//         setTimeout(() => {
+//             resolve({name:'mnn', data: 'ffff'})
+//         }, 1000)
+//     })
+// }
+
+// a().then(res => {
+//     console.log(res)
+// }).catch(err => {
+//     console.log(err)
+// })
+
+let vvvv = () => {
+    return new Promise ((res, rejc) => {
+        setTimeout(() => {
+            console.log(2)
+            res('')
+        }, 1000)
+    })
 }
 
-function b() {
-    setTimeout(()=>{ console.log(2); } , 3000);
-        
-    
+let ccc = () => {
+    return new Promise ((res, rejc) => {
+        setTimeout(() => {
+            console.log(3)
+            res('')
+        }, 1000)
+    })
 }
-function c()
-{
-    console.log(3);
+
+let a = () => {
+   
+    console.log(1)
 }
-a(b);
-c();
+
+let c = () => {
+    console.log(4)
+}
+
+let b =  callback => {
+    vvvv().then(res  => {
+        callback.then(resss => {
+          
+        })
+    })
+    // let res = await  vvvv()
+    // callback()
+    ccc()
+            c()
+}
 
 
 
+a()
+b()
 </script>
 </html>
